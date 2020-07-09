@@ -1,4 +1,223 @@
-h1 {
-  color: red;
-  border: 2px solid black;
+@font-face {
+  font-family: "Open Sans";
+  src: url(https://github.com/AlexaGri/MQ-Diploma/blob/master/fonts/OpenSans-Regular.woff); /* не подключается */
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(https://github.com/AlexaGri/MQ-Diploma/blob/master/fonts/OpenSans-Bold.woff);
+
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: green; /* заменить на белый, когда будет готово */
+}
+
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+}
+
+.header {
+  height: 100vh;
+  box-sizing: border-box;
+  background-image: url("https://github.com/AlexaGri/MQ-Diploma/blob/master/images/football_767.jpg?raw=true");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #0a0e34;
+
+  position: relative;
+  z-index: 1;
+
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: #0a0e34;
+  opacity: 0.9;
+}
+
+.header-content {
+  width: 88%; /* 280/320 */
+  height: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5.28vh; /* 30/568 */ /* 9.4%; /* 30/320 */
+  padding-bottom: 14.79vh; /* 26%; /* 84/320 */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  fill: #fff;
+  width: 23.24vmax; /* 132px / 568 */
+  
+  position: relative;
+  z-index: 3;
+}
+
+.header-text {
+  position: relative;
+  z-index: 3;
+
+  font-size: 8.75vmin; /* 28px; /320 */
+  line-height: 5.46vh; /* 31px; */
+  font-weight: 700;
+  font-family: inherit;
+
+  padding-top: 7.92vh; /* 135-90=45px */
+}
+
+.header-p {
+  display: block;
+}
+
+.header-p:nth-child(n + 2) {
+  padding-left: 15.63vmin; /* 50px; /320 */
+  padding-top: 8.13vmin; /* 26px; */
+}
+
+.header-download-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.header-download-button {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2.5vmin; /* 8px; /320 */
+  font-weight: 400;
+  font-family: inherit;
+
+  width: 100%;
+  height: 6.16vh; /* 35px; /268 */
+  box-sizing: border-box;
+  background-color: #5e42b0;
+  border-radius: 3.17vh; /* 18px; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-download-button:nth-child(n + 2) {
+  margin-top: 2.46vh /* 14px; */
+}
+
+.header-download-button:hover {
+  background-color: #0a0e34;
+}
+
+.header-download-link-container {
+  width: 42%; /* 115px; */
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+}
+
+.header-download-logo {
+  fill: #fff;
+  height: 4.23vh; /* 24px; */
+  width: 4.23vh; /* 24px; */
+}
+
+.header-download-link {
+  display: block;
+  margin-left: 2.5vmin; /* 8px; /320 */
+}
+
+.link-bold {
+  font-weight: 700;
+}
+
+.athlets {
+  background-color: #fff;
+  height: 53.87vh; /* 306px; /568 */
+}
+
+.athlets-container {
+  width: 88%; /* 280/320 */
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2.81vh; /* 25px - 9 корректировка отступов текста */
+  box-sizing: border-box;
+  
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.athlets-h2-container {
+  width: 100%;
+}
+
+.athlets-h2 {
+  font-size: 15.63vmin; /* 50px; /320 */
+  line-height: 18.75vmin; /* 60px; */
+  color: #e7e7e7;
+  font-weight: 700;
+  font-family: inherit;
+  text-transform: uppercase;
+  display: block;
+}
+
+.athlets-photo {
+  display: block;
+  width: 68.57%; /* 192/280 */
+  margin-top: 1.58vh; /* 18px - 9 */
+}
+
+/* для горизонтального положения на телефоне */
+@media (max-width: 640px) and (orientation: landscape) {
+  .header-download-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .header-download-button {
+    width: 49%; /* (100-2)/2 */
+    height: 10vh;
+    border-radius: 5.14vh;
+  }
+  
+  .header-download-button:nth-child(n + 2) {
+    margin-top: 0;
+    margin-left: 2%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 960px) {
+}
+
+@media (min-width: 961px) and (max-width: 1920px) {
 }
